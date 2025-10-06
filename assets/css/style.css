@@ -113,6 +113,15 @@
   box-sizing: border-box;
 }
 
+/* Fix navbar overflow on small screens - START */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+/* Fix navbar overflow on small screens - END */
+
 li { list-style: none; }
 
 a,
