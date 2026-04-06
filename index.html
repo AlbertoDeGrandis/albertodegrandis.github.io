@@ -23,6 +23,27 @@
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
+  <!-- override gallery layout -->
+  <style>
+    .gallery-list { grid-template-columns: 1fr; }
+    .gallery-item { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .gallery-item .gallery-card { 
+      animation: none !important; 
+      opacity: 1 !important; 
+      visibility: visible !important;
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      width: 100% !important;
+    }
+    @media (min-width: 992px) {
+      .gallery-item { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .gallery-item { grid-template-columns: 1fr; }
+    }
+  </style>
+
   <!-- 
     - custom font link
   -->
@@ -61,6 +82,18 @@
       <a href="#" class="logo">
         <img src="./assets/images/logo.svg" width="40" height="40" alt="Alberto De Grandis home">
       </a>
+
+      <div style="display: flex; align-items: center; gap: 16px; margin-inline-start: auto; margin-inline-end: 16px;">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+          <img src="./assets/images/facebook.svg" width="20" height="20" alt="Facebook" style="display:block;">
+        </a>
+        <a href="https://www.instagram.com/alb.degra/" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="./assets/images/instagram.svg" width="20" height="20" alt="Instagram" style="display:block;">
+        </a>
+        <a href="https://www.linkedin.com/in/alberto-de-grandis-b084693b1?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <img src="./assets/images/linkedin.svg" width="20" height="20" alt="LinkedIn" style="display:block;">
+        </a>
+      </div>
 
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
         <img src="./assets/images/menu.svg" width="17" height="17" alt="menu icon">
@@ -111,7 +144,7 @@
 
         <p class="navbar-text">
           Per collaborazioni
-          <a href="mailto:degrandis.cinema@gmail.com" class="contact-link">degrandis.cinema@gmail.com</a>
+          <a href="/cdn-cgi/l/email-protection#fc98999b8e9d9298958fd29f959299919dbc9b919d9590d29f9391" class="contact-link"><span class="__cf_email__" data-cfemail="e7838280958689838e94c9848e89828a86a7808a868e8bc984888a">[email&#160;protected]</span></a>
         </p>
 
       </nav>
@@ -147,7 +180,7 @@
               <strong class="strong" data-letter-effect>Storyteller</strong>
             </div>
 
-            <p class="hero-text">Diploma in Regia e Sceneggiatura – 2022</p>
+            <p class="hero-text">Regia e Sceneggiatura</p>
 
           </div>
 
@@ -170,7 +203,7 @@
 
           <ul class="gallery-list">
 
-            <li class="gallery-item" data-reveal>
+            <li class="gallery-item">
 
               <div class="gallery-card">
 
@@ -216,10 +249,6 @@
 
               </div>
 
-            </li>
-
-            <li class="gallery-item" data-reveal>
-
               <div class="gallery-card">
 
                 <figure class="card-banner img-holder has-before" style="--width: 450; --height: 625;">
@@ -232,7 +261,7 @@
                     <a href="https://www.imdb.com/it/title/tt36413419/?ref_=nm_ov_bio_lk" target="_blank" rel="noopener" class="card-title">Come una Foglia</a>
                   </h3>
 
-                  <span class="card-tag">2024 · Romantico</span>
+                  <span class="card-tag">2024 · Romantico, LGBT+</span>
                 </div>
 
                 <a href="https://www.imdb.com/it/title/tt36413419/?ref_=nm_ov_bio_lk" target="_blank" rel="noopener" class="btn-icon">
@@ -267,10 +296,6 @@
             </li>
 
           </ul>
-
-          <a href="#service" class="scroll-down">
-            <img src="./assets/images/scroll-down.svg" width="40" height="66" loading="lazy" alt="mouse scroll">
-          </a>
 
           <img src="./assets/images/gallery-shape.svg" width="220" height="78" loading="lazy" alt="" class="shape">
 
@@ -404,7 +429,7 @@
               <a href="#" class="category-card">
                 <h3 class="h4 card-title">Videoconcorso Francesco Pasinetti.</h3>
                 <figure class="card-banner img-holder" style="--width: 600; --height: 690;">
-                  <img src="./assets/images/category-2.jpg" width="600" height="690" loading="lazy" alt="Videoconcorso Francesco Pasinetti"
+                  <img src="./assets/images/category-12.jpg" width="600" height="690" loading="lazy" alt="Videoconcorso Francesco Pasinetti"
                     class="img-cover">
                 </figure>
               </a>
@@ -436,11 +461,8 @@
             <div class="wrapper has-before" data-reveal="right">
 
               <p class="section-text">
-                Un appassionato
-                <em class="em">regista e sceneggiatore</em>
-                che lavora nel cinema italiano
-                <em class="em">dal 2020.</em>
-                I’m ready to give you my best.
+                No matter what, there's always a story to tell
+          
               </p>
 
               <img src="./assets/images/signature.png" width="151" height="92" loading="lazy" alt="firma"
@@ -560,27 +582,55 @@
 
               <h2 class="h2 section-title" id="portfolio-label" data-reveal>Altri progetti.</h2>
 
-              <div class="portfolio-card" data-reveal>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
 
-                <figure class="card-banner img-holder has-before" style="--width: 700; --height: 605;">
-                  <img src="./assets/images/portfolio-1.jpg" width="700" height="605" loading="lazy" alt="Non Giudicare"
-                    class="img-cover">
-                </figure>
+                <div class="portfolio-card" data-reveal>
 
-                <div class="card-content">
-                  <h3 class="h4">
-                    <a href="https://www.imdb.com/it/title/tt41082379/?ref_=nm_flmg_job_3_accord_1_unrel_cdt_t_1" target="_blank" rel="noopener" class="card-title">Non Giudicare</a>
-                  </h3>
+                  <figure class="card-banner img-holder has-before" style="--width: 450; --height: 300;">
+                    <img src="./assets/images/portfolio-1.jpg" width="450" height="300" loading="lazy" alt="Non Giudicare"
+                      class="img-cover">
+                  </figure>
 
-                  <p class="card-tag">Cortometraggio · 2026 · Assistente alla regia</p>
+                  <div class="card-content">
+                    <h3 class="h5">
+                      <a href="https://www.imdb.com/it/title/tt41082379/?ref_=nm_flmg_job_3_accord_1_unrel_cdt_t_1" target="_blank" rel="noopener" class="card-title">Non Giudicare</a>
+                    </h3>
+
+                    <p class="card-tag">Cortometraggio · 2026 · Assistente alla regia</p>
+                  </div>
+
+                  <a href="https://www.imdb.com/it/title/tt41082379/?ref_=nm_flmg_job_3_accord_1_unrel_cdt_t_1" target="_blank" rel="noopener" class="btn-icon" aria-label="Scopri di più">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="43" height="20" viewBox="0 0 43 20" fill="none">
+                      <path d="M0 10H41" stroke="black" stroke-width="2" />
+                      <path d="M33 1L41.9 10.2727L33 19" stroke="black" stroke-width="2" />
+                    </svg>
+                  </a>
+
                 </div>
 
-                <a href="https://www.imdb.com/it/title/tt41082379/?ref_=nm_flmg_job_3_accord_1_unrel_cdt_t_1" target="_blank" rel="noopener" class="btn-icon" aria-label="Scopri di più">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="43" height="20" viewBox="0 0 43 20" fill="none">
-                    <path d="M0 10H41" stroke="black" stroke-width="2" />
-                    <path d="M33 1L41.9 10.2727L33 19" stroke="black" stroke-width="2" />
-                  </svg>
-                </a>
+                <div class="portfolio-card" data-reveal>
+
+                  <figure class="card-banner img-holder has-before" style="--width: 450; --height: 300;">
+                    <img src="./assets/images/portfolio-2.jpg" width="450" height="300" loading="lazy" alt="Bus Stop"
+                      class="img-cover">
+                  </figure>
+
+                  <div class="card-content">
+                    <h3 class="h5">
+                      <a href="https://www.instagram.com/bus_stop_corto?igsh=OHMxYzgydnl1Yndh" target="_blank" rel="noopener" class="card-title">Bus Stop</a>
+                    </h3>
+
+                    <p class="card-tag">Cortometraggio · 2026 · Regia</p>
+                  </div>
+
+                  <a href="https://www.instagram.com/bus_stop_corto?igsh=OHMxYzgydnl1Yndh" target="_blank" rel="noopener" class="btn-icon" aria-label="Scopri di più">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="43" height="20" viewBox="0 0 43 20" fill="none">
+                      <path d="M0 10H41" stroke="black" stroke-width="2" />
+                      <path d="M33 1L41.9 10.2727L33 19" stroke="black" stroke-width="2" />
+                    </svg>
+                  </a>
+
+                </div>
 
               </div>
 
@@ -612,7 +662,7 @@
         <p class="section-subtitle" data-reveal>Contatti</p>
 
         <h2 class="h2 section-title" data-reveal>
-          Collaborazioni, proposte di lavoro? Scrivimi.
+          Collaborazioni o proposte di lavoro? Scrivimi!
         </h2>
 
         <a href="mailto:degrandis.cinema@gmail.com" class="btn-icon" data-reveal>
